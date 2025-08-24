@@ -24,9 +24,9 @@
 		"format": "biome format --write"
 	},
 	"dependencies": {
-		"@astrojs/check": "^0.3.1",
-		"@astrojs/sitemap": "^3.0.3",
-		"astro": "^4.0.3",
+		"@astrojs/check": "^0.9.4",
+		"@astrojs/sitemap": "^3.5.1",
+		"astro": "^5.13.3",
 		"typescript": "^5.9.2"
 	},
 	"repository": {
