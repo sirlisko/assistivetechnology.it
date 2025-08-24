@@ -1,1 +1,5 @@
-User-agent: * Allow: /
+User-agent: *
+Allow: /
+
+Sitemap: https://assistivetechnology.it/sitemap-index.xml
+Sitemap: https://assistivetechnology.it/sitemap-0.xml
