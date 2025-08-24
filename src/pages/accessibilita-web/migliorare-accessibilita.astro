@@ -216,11 +216,15 @@ import Layout from "../../layouts/Layout.astro";
       >):
     </p>
     <table>
-      <tr>
-        <th>Browser</th>
-        <th colspan="2">Combinazione</th>
-        <th>Note</th>
-      </tr>
+      <caption>Combinazioni di tasti per access key nei principali browser</caption>
+      <thead>
+        <tr>
+          <th scope="col">Browser</th>
+          <th scope="colgroup" colspan="2">Combinazione</th>
+          <th scope="col">Note</th>
+        </tr>
+      </thead>
+      <tbody>
       <tr>
         <td>Google Chrome</td>
         <td>alt (win)</td>
@@ -253,6 +257,7 @@ import Layout from "../../layouts/Layout.astro";
         <td>alt + control (mac)</td>
         <td><em>Sequenza di tasti relativa alla versione 4</em></td>
       </tr>
+      </tbody>
     </table>
     <h2>3.4.3 Access Bar</h2>
     <p>

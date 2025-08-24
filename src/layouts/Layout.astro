@@ -29,17 +29,44 @@ const { description, keywords, title, prev, next, hideNavigation } =
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Luca Lischetti" />
     <link type="text/plain" rel="author" href="/humans.txt" />
     <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="it_IT" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Assistive Technology - Informatizzando la Disabilità",
+        "description": "Risorse sulla tecnologia assistiva e accessibilità web - Tesi di Luca Lischetti",
+        "url": "https://assistivetechnology.it",
+        "author": {
+          "@type": "Person",
+          "name": "Luca Lischetti",
+          "url": "https://sirlisko.com"
+        },
+        "inLanguage": "it-IT",
+        "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it",
+        "dateCreated": "2010-03-14",
+        "dateModified": "2012-06-01",
+        "keywords": "assistive technology, accessibilità web, disabilità, tecnologie assistive, W3C, WAI, WCAG"
+      }
+    </script>
     <title>{title}</title>
   </head>
   <body>
+    <a href="#main" class="skip-link">Vai al contenuto principale</a>
     {!hideNavigation && <Navigation prev={prev} next={next} />}
-    <slot />
+    <main id="main" role="main">
+      <slot />
+    </main>
     {!hideNavigation && <Navigation prev={prev} next={next} />}
-    <footer>
+    <footer role="contentinfo">
       <p>
         &copy; <a href="https://sirlisko.com">Luca Lischetti</a> (<a
           href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it"
