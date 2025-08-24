@@ -13,23 +13,33 @@ interface Props {
 const { prev, next } = Astro.props;
 ---
 
-<nav aria-label="Main">
+<nav role="navigation" aria-label="Navigazione capitoli">
   <ul>
     <li class="prev">
       {
         prev && (
-          <a href={prev.href} rel="prev">
-            &lt;&lt; {prev.title}
+          <a
+            href={prev.href}
+            rel="prev"
+            aria-label={`Capitolo precedente: ${prev.title}`}
+          >
+            <span aria-hidden="true">&lt;&lt;</span> {prev.title}
           </a>
         )
       }
     </li>
-    <li class="index"><a href="/">Indice</a></li>
+    <li class="index">
+      <a href="/" aria-label="Torna all'indice principale">Indice</a>
+    </li>
     <li class="next">
       {
         next && (
-          <a href={next.href} rel="next">
-            {next.title} &gt;&gt;
+          <a
+            href={next.href}
+            rel="next"
+            aria-label={`Capitolo successivo: ${next.title}`}
+          >
+            {next.title} <span aria-hidden="true">&gt;&gt;</span>
           </a>
         )
       }
@@ -49,8 +59,34 @@ const { prev, next } = Astro.props;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     gap: 1rem;
+    align-items: center;
   }
   nav li.prev {
     text-align: right;
+  }
+  nav li.next {
+    text-align: left;
+  }
+  nav li.index {
+    text-align: center;
+  }
+
+  /* Mobile navigation improvements */
+  @media (max-width: 650px) {
+    nav ul {
+      gap: 0.5rem;
+      grid-template-columns: 1fr auto 1fr;
+    }
+
+    nav a {
+      font-size: 0.9em;
+      padding: 8px 4px;
+    }
+
+    nav li.prev,
+    nav li.next {
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
   }
 </style>

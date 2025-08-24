@@ -5,6 +5,7 @@ interface Props {
 	description: string;
 	keywords: string;
 	title: string;
+	section?: string;
 	prev?: {
 		href: string;
 		title: string;
@@ -19,8 +20,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href.replace(
 	/\/+$/,
 	"",
 );
-const { description, keywords, title, prev, next, hideNavigation } =
+const { description, keywords, title, prev, next, hideNavigation, section } =
 	Astro.props;
+
+const titleFull = `${title} - Assistive Technology - Informatizzando la Disabilità`;
 ---
 
 <!doctype html>
@@ -29,27 +32,85 @@ const { description, keywords, title, prev, next, hideNavigation } =
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Luca Lischetti" />
+    <meta name="theme-color" content="#005fcc" />
     <link type="text/plain" rel="author" href="/humans.txt" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="canonical" href={canonicalURL} />
-    <title>{title}</title>
+    <meta property="og:title" content={titleFull} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:image" content="https://assistivetechnology.it/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Assistive Technology - Informatizzando la Disabilità" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={titleFull} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://assistivetechnology.it/og-image.png" />
+    <script is:inline type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Assistive Technology - Informatizzando la Disabilità",
+        "description": "Risorse sulla tecnologia assistiva e accessibilità web - Tesi di Luca Lischetti",
+        "url": "https://assistivetechnology.it",
+        "author": {
+          "@type": "Person",
+          "name": "Luca Lischetti",
+          "url": "https://sirlisko.com"
+        },
+        "inLanguage": "it-IT",
+        "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it",
+        "dateCreated": "2010-03-14",
+        "dateModified": "2012-06-01",
+        "keywords": "assistive technology, accessibilità web, disabilità, tecnologie assistive, W3C, WAI, WCAG"
+      }
+    </script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": titleFull,
+      "description": description,
+      "author": {
+        "@type": "Person",
+        "name": "Luca Lischetti",
+        "url": "https://sirlisko.com"
+      },
+      "datePublished": "2010-03-14",
+      "dateModified": "2012-06-01",
+      "isPartOf": {
+        "@type": "Book",
+        "name": "Assistive Technology - Informatizzando la Disabilità"
+      },
+      "articleSection": section || null,
+      "inLanguage": "it-IT",
+      "url": canonicalURL
+    })}>
+    </script>
+    <title>{titleFull}</title>
   </head>
   <body>
+    <a href="#main" class="skip-link">Vai al contenuto principale</a>
     {!hideNavigation && <Navigation prev={prev} next={next} />}
-    <slot />
+    <main id="main" role="main" lang="it">
+      <slot />
+    </main>
     {!hideNavigation && <Navigation prev={prev} next={next} />}
-    <footer>
+    <footer role="contentinfo">
       <p>
-        &copy; <a href="https://sirlisko.com">Luca Lischetti</a> (<a
-          href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it"
+        &copy; <a href="https://sirlisko.com" rel="noopener">Luca Lischetti</a> (<a
+          href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it" rel="noopener"
           >licenza</a
         >), scritto Gennaio - Marzo 2010, ultima modifica Giugno 2012.
       </p>
       <p>
         Codice del sito disponibile su Github <a
-          href="https://github.com/sirLisko/assistivetechnology.it"
-          >https://github.com/sirLisko/assistivetechnology.it</a
+          href="https://github.com/sirlisko/assistivetechnology.it" rel="noopener"
+          >https://github.com/sirlisko/assistivetechnology.it</a
         >.
       </p>
     </footer>
@@ -57,97 +118,274 @@ const { description, keywords, title, prev, next, hideNavigation } =
 </html>
 
 <style is:global>
+  /* Skip Link */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
+  /* Access Key Indicators */
   *[accesskey]:after {
     content: "[" attr(accesskey) "]";
   }
+
+  /* Base Styles */
   body {
     font-family: tahoma, arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
+    padding: 0;
   }
+
+  /* Focus Indicators */
+  a:focus,
+  button:focus {
+    outline: 2px solid #005fcc;
+    outline-offset: 2px;
+  }
+
+  /* Headers and Tables */
   header,
   table {
     text-align: center;
   }
+
   table {
     border-collapse: collapse;
   }
+
   td {
     border: 1px solid #000;
   }
+
+  /* Headings */
   h1 {
     margin-bottom: 1.4em;
     page-break-before: left;
     line-height: 1.25;
+    font-size: 2em;
   }
+
+  article h1 {
+    font-size: 2em;
+  }
+
   @media (min-width: 650px) {
-    h1 {
-      font-size: 200%;
+    h1,
+    article h1 {
+      font-size: 2.2em;
     }
   }
+
+  @media (min-width: 768px) {
+    h1,
+    article h1 {
+      font-size: 2.4em;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h1,
+    article h1 {
+      font-size: 2.6em;
+    }
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  h4 {
+    font-size: 1.1em;
+  }
+
+  h5 {
+    font-size: 1em;
+  }
+
+  h6 {
+    font-size: 0.9em;
+  }
+
+  article h2 {
+    font-size: 1.5em;
+  }
+
+  article h3 {
+    font-size: 1.2em;
+  }
+
+  article h4 {
+    font-size: 1.1em;
+  }
+
   h1 .capitolo {
     display: block;
     font-size: 0.75em;
     font-weight: normal;
     margin-bottom: 1rem;
   }
+
   @media (min-width: 650px) {
     h1 .capitolo {
-      font-size: 50%;
+      font-size: 0.5em;
     }
   }
+
+  /* Article and Content */
   article {
     color: #222;
     line-height: 150%;
     max-width: 850px;
   }
+
   article,
   footer {
     padding: 1em;
   }
+
   @media (min-width: 650px) {
     article,
     footer {
       padding: 3em 5em;
     }
   }
+
+  @media (min-width: 768px) {
+    article,
+    footer {
+      padding: 2em 3em;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    article,
+    footer {
+      padding: 3em 5em;
+    }
+  }
+
+  /* Footer */
   footer {
     text-align: center;
+    color: #666;
+    font-size: 90%;
+    line-height: 150%;
+    margin-top: 2em;
   }
+
+  /* References */
   .referenze {
     font-size: 80%;
     line-height: 100%;
     margin-top: 3em;
   }
+
   .referenze a {
     line-break: anywhere;
   }
+
   .referenze li {
     line-height: 2;
   }
+
   .referenze li a:first-child {
     font-weight: bold;
     text-decoration: none;
   }
-  footer {
-    color: #aaa;
-    font-size: 80%;
-    line-height: 150%;
-    margin-top: 2em;
-  }
 
+  /* Target Highlighting */
   :target {
     background-color: #def;
   }
 
+  /* Responsive Pre Elements */
   @media (max-width: 650px) {
     pre {
       white-space: pre-line;
       padding: 1em;
     }
   }
+
+  /* Images */
   img {
     max-width: 100%;
+    height: auto;
+  }
+
+  /* Touch Targets for Mobile */
+  @media (max-width: 768px) {
+    a,
+    button {
+      display: inline-block;
+    }
+
+    nav a {
+      padding: 12px 16px;
+    }
+
+    article {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    h1,
+    article h1 {
+      font-size: 1.8em;
+    }
+
+    h2,
+    article h2 {
+      font-size: 1.3em;
+    }
+
+    h3,
+    article h3 {
+      font-size: 1.1em;
+    }
+
+    h4,
+    article h4 {
+      font-size: 1em;
+    }
+
+    table {
+      font-size: 0.8em;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table th,
+    table td {
+      padding: 8px 4px;
+      text-align: left;
+      word-wrap: break-word;
+      max-width: 120px;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    p {
+      margin-bottom: 1.2em;
+    }
   }
 </style>

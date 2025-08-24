@@ -3,20 +3,20 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="Indice - Assistive Technology - Informatizzando la Disabilità"
+  title="Indice"
   description="Assistive Technology indice del sito."
   keywords="Assistive Technology, AT, accessibilità"
   hideNavigation
 >
   <header>
     <h1>Assistive Technology - Informatizzando la Disabilità</h1>
-     di <a href="https://sirlisko.com/">Luca Lischetti</a>
+     di <a href="https://sirlisko.com/" rel="noopener">Luca Lischetti</a>
   </header>
   <article>
-    <h3><a href="/prefazione">Prefazione</a></h3>
+    <h3 aria-level="2"><a href="/prefazione">Prefazione</a></h3>
     <ol>
       <li>
-        <h3>
+        <h3 aria-level="2">
           <a href="/introduzione/definizione"
             >Introduzione all'Assistive Technology</a
           >
@@ -28,7 +28,7 @@ import Layout from "../layouts/Layout.astro";
         </ol>
       </li>
       <li>
-        <h3><a href="/accessibilita/definizione">Accessibilità</a></h3>
+        <h3 aria-level="2"><a href="/accessibilita/definizione">Accessibilità</a></h3>
         <ol>
           <li><a href="/accessibilita/definizione">Definizione</a></li>
           <li>
@@ -41,7 +41,7 @@ import Layout from "../layouts/Layout.astro";
         </ol>
       </li>
       <li>
-        <h3><a href="/accessibilita-web/definizione">Accessibilità Web</a></h3>
+        <h3 aria-level="2"><a href="/accessibilita-web/definizione">Accessibilità Web</a></h3>
         <ol>
           <li><a href="/accessibilita-web/definizione">Definizione</a></li>
           <li>
@@ -109,14 +109,26 @@ import Layout from "../layouts/Layout.astro";
         </ol>
       </li>
     </ol>
-    <h3>Appendici</h3>
+    <h3 aria-level="2">Appendici</h3>
     <ol type="A">
       <li><a href="/appendice/braille">Il Braille</a></li>
       <li>
         <a href="/appendice/classificazione-dispositivi-assistivi"
-          >ISO 9999/2007</a>
+          >ISO 9999/2007</a
+        >
       </li>
       <li><a href="/appendice/legge-stanca">Legge Stanca</a></li>
     </ol>
   </article>
 </Layout>
+
+<style is:inline>
+  article {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  footer {
+    margin-top: 0;
+  }
+
+</style>
