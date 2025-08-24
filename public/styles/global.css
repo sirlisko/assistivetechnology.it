@@ -1,0 +1,278 @@
+/* Skip Link */
+.skip-link {
+	position: absolute;
+	top: -40px;
+	left: 6px;
+	background: #000;
+	color: #fff;
+	padding: 8px;
+	text-decoration: none;
+	z-index: 1000;
+	border-radius: 0 0 4px 4px;
+}
+
+.skip-link:focus {
+	top: 0;
+}
+
+/* Access Key Indicators */
+*[accesskey]:after {
+	content: "[" attr(accesskey) "]";
+}
+
+/* Base Styles */
+body {
+	font-family: tahoma, arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+}
+
+/* Focus Indicators */
+a:focus,
+button:focus {
+	outline: 2px solid #005fcc;
+	outline-offset: 2px;
+}
+
+/* Headers and Tables */
+header,
+table {
+	text-align: center;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td {
+	border: 1px solid #000;
+}
+
+/* Headings */
+h1 {
+	margin-bottom: 1.4em;
+	page-break-before: left;
+	line-height: 1.25;
+	font-size: 2em; /* Explicit base font-size for all h1 elements */
+}
+
+/* Specific font-size for h1 within article elements */
+article h1 {
+	font-size: 2em;
+}
+
+@media (min-width: 650px) {
+	h1,
+	article h1 {
+		font-size: 2.2em;
+	}
+}
+
+@media (min-width: 768px) {
+	h1,
+	article h1 {
+		font-size: 2.4em;
+	}
+}
+
+@media (min-width: 1024px) {
+	h1,
+	article h1 {
+		font-size: 2.6em;
+	}
+}
+
+/* Other heading levels with explicit font-sizes */
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.2em;
+}
+
+h4 {
+	font-size: 1.1em;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.9em;
+}
+
+/* Ensure headings in articles maintain consistent sizing */
+article h2 {
+	font-size: 1.5em;
+}
+
+article h3 {
+	font-size: 1.2em;
+}
+
+article h4 {
+	font-size: 1.1em;
+}
+
+h1 .capitolo {
+	display: block;
+	font-size: 0.75em;
+	font-weight: normal;
+	margin-bottom: 1rem;
+}
+
+@media (min-width: 650px) {
+	h1 .capitolo {
+		font-size: 0.5em;
+	}
+}
+
+/* Article and Content */
+article {
+	color: #222;
+	line-height: 150%;
+	max-width: 850px;
+}
+
+article,
+footer {
+	padding: 1em;
+}
+
+@media (min-width: 650px) {
+	article,
+	footer {
+		padding: 3em 5em;
+	}
+}
+
+@media (min-width: 768px) {
+	article,
+	footer {
+		padding: 2em 3em;
+	}
+}
+
+@media (min-width: 1024px) {
+	article,
+	footer {
+		padding: 3em 5em;
+	}
+}
+
+/* Footer */
+footer {
+	text-align: center;
+	color: #666;
+	font-size: 90%;
+	line-height: 150%;
+	margin-top: 2em;
+}
+
+/* References */
+.referenze {
+	font-size: 80%;
+	line-height: 100%;
+	margin-top: 3em;
+}
+
+.referenze a {
+	line-break: anywhere;
+}
+
+.referenze li {
+	line-height: 2;
+}
+
+.referenze li a:first-child {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* Target Highlighting */
+:target {
+	background-color: #def;
+}
+
+/* Responsive Pre Elements */
+@media (max-width: 650px) {
+	pre {
+		white-space: pre-line;
+		padding: 1em;
+	}
+}
+
+/* Images */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Touch Targets for Mobile */
+@media (max-width: 768px) {
+	a,
+	button {
+		display: inline-block;
+	}
+
+	nav a {
+		padding: 12px 16px;
+	}
+
+	/* Improve mobile article spacing */
+	article {
+		font-size: 16px;
+		line-height: 1.6;
+	}
+
+	/* Mobile heading adjustments */
+	h1,
+	article h1 {
+		font-size: 1.8em;
+	}
+
+	h2,
+	article h2 {
+		font-size: 1.3em;
+	}
+
+	h3,
+	article h3 {
+		font-size: 1.1em;
+	}
+
+	h4,
+	article h4 {
+		font-size: 1em;
+	}
+
+	/* Better mobile table handling */
+	table {
+		font-size: 0.8em;
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	table th,
+	table td {
+		padding: 8px 4px;
+		text-align: left;
+		word-wrap: break-word;
+		max-width: 120px;
+	}
+
+	/* Prevent horizontal scrolling on mobile */
+	body {
+		overflow-x: hidden;
+	}
+
+	/* Better mobile paragraph spacing */
+	p {
+		margin-bottom: 1.2em;
+	}
+}

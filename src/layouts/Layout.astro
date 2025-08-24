@@ -38,7 +38,8 @@ const { description, keywords, title, prev, next, hideNavigation } =
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="article" />
     <meta property="og:locale" content="it_IT" />
-    <script type="application/ld+json">
+    <link rel="stylesheet" href="/styles/global.css" />
+    <script is:inline type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -75,106 +76,10 @@ const { description, keywords, title, prev, next, hideNavigation } =
       </p>
       <p>
         Codice del sito disponibile su Github <a
-          href="https://github.com/sirLisko/assistivetechnology.it" rel="noopener"
-          >https://github.com/sirLisko/assistivetechnology.it</a
+          href="https://github.com/sirlisko/assistivetechnology.it" rel="noopener"
+          >https://github.com/sirlisko/assistivetechnology.it</a
         >.
       </p>
     </footer>
   </body>
 </html>
-
-<style is:global>
-  *[accesskey]:after {
-    content: "[" attr(accesskey) "]";
-  }
-  body {
-    font-family: tahoma, arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  header,
-  table {
-    text-align: center;
-  }
-  table {
-    border-collapse: collapse;
-  }
-  td {
-    border: 1px solid #000;
-  }
-  h1 {
-    margin-bottom: 1.4em;
-    page-break-before: left;
-    line-height: 1.25;
-  }
-  @media (min-width: 650px) {
-    h1 {
-      font-size: 200%;
-    }
-  }
-  h1 .capitolo {
-    display: block;
-    font-size: 0.75em;
-    font-weight: normal;
-    margin-bottom: 1rem;
-  }
-  @media (min-width: 650px) {
-    h1 .capitolo {
-      font-size: 50%;
-    }
-  }
-  article {
-    color: #222;
-    line-height: 150%;
-    max-width: 850px;
-  }
-  article,
-  footer {
-    padding: 1em;
-  }
-  @media (min-width: 650px) {
-    article,
-    footer {
-      padding: 3em 5em;
-    }
-  }
-  footer {
-    text-align: center;
-  }
-  .referenze {
-    font-size: 80%;
-    line-height: 100%;
-    margin-top: 3em;
-  }
-  .referenze a {
-    line-break: anywhere;
-  }
-  .referenze li {
-    line-height: 2;
-  }
-  .referenze li a:first-child {
-    font-weight: bold;
-    text-decoration: none;
-  }
-  footer {
-    color: #aaa;
-    font-size: 80%;
-    line-height: 150%;
-    margin-top: 2em;
-  }
-
-  :target {
-    background-color: #def;
-  }
-
-  @media (max-width: 650px) {
-    pre {
-      white-space: pre-line;
-      padding: 1em;
-    }
-  }
-  img {
-    max-width: 100%;
-  }
-</style>

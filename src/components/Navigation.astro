@@ -59,8 +59,34 @@ const { prev, next } = Astro.props;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     gap: 1rem;
+    align-items: center;
   }
   nav li.prev {
     text-align: right;
+  }
+  nav li.next {
+    text-align: left;
+  }
+  nav li.index {
+    text-align: center;
+  }
+
+  /* Mobile navigation improvements */
+  @media (max-width: 650px) {
+    nav ul {
+      gap: 0.5rem;
+      grid-template-columns: 1fr auto 1fr;
+    }
+
+    nav a {
+      font-size: 0.9em;
+      padding: 8px 4px;
+    }
+
+    nav li.prev,
+    nav li.next {
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
   }
 </style>
