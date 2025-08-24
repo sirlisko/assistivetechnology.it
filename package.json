@@ -1,45 +1,41 @@
 {
-  "name": "assistivetechnology.it",
-  "version": "1.0.0",
-  "description": "Assistive Technology - Informatizzando la disabilità",
-  "private": true,
-  "author": {
-    "name": "Luca Lischetti",
-    "email": "luca@sirlisko.com",
-    "url": "https://sirlisko.com"
-  },
-  "homepage": "https://assistivetechnology.it",
-  "keywords": [
-    "assistive technology",
-    "assistive",
-    "technology"
-  ],
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "lint": "eslint --ext .astro,.js,.ts,.tsx .",
-    "format": "prettier --write \"**/*.{astro,js,ts,json,css,md}\" --plugin=prettier-plugin-astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.3.1",
-    "@astrojs/sitemap": "^3.0.3",
-    "astro": "^4.0.3",
-    "typescript": "^5.3.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sirLisko/assistivetechnology.it.git"
-  },
-  "license": "CC-BY-SA-4.0",
-  "devDependencies": {
-    "@typescript-eslint/parser": "^6.13.2",
-    "eslint": "^8.55.0",
-    "eslint-plugin-astro": "^0.30.0",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "prettier": "^3.1.0",
-    "prettier-plugin-astro": "^0.12.2"
-  }
+	"name": "assistivetechnology.it",
+	"version": "1.0.0",
+	"description": "Assistive Technology - Informatizzando la disabilità",
+	"private": true,
+	"author": {
+		"name": "Luca Lischetti",
+		"email": "luca@sirlisko.com",
+		"url": "https://sirlisko.com"
+	},
+	"homepage": "https://assistivetechnology.it",
+	"keywords": ["assistive technology", "assistive", "technology"],
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"lint": "eslint --ext .astro,.js,.ts,.tsx .",
+		"format": "prettier --write \"**/*.{astro,js,ts,json,css,md}\" --plugin=prettier-plugin-astro"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.3.1",
+		"@astrojs/sitemap": "^3.0.3",
+		"astro": "^4.0.3",
+		"typescript": "^5.3.3"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sirLisko/assistivetechnology.it.git"
+	},
+	"license": "CC-BY-SA-4.0",
+	"devDependencies": {
+		"@typescript-eslint/parser": "^6.13.2",
+		"eslint": "^8.55.0",
+		"eslint-plugin-astro": "^0.30.0",
+		"eslint-plugin-jsx-a11y": "^6.8.0",
+		"prettier": "^3.1.0",
+		"prettier-plugin-astro": "^0.12.2"
+	}
 }
