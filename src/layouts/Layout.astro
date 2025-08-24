@@ -2,25 +2,25 @@
 import Navigation from "../components/Navigation.astro";
 
 interface Props {
-  description: string;
-  keywords: string;
-  title: string;
-  prev?: {
-    href: string;
-    title: string;
-  };
-  next?: {
-    href: string;
-    title: string;
-  };
-  hideNavigation?: boolean;
+	description: string;
+	keywords: string;
+	title: string;
+	prev?: {
+		href: string;
+		title: string;
+	};
+	next?: {
+		href: string;
+		title: string;
+	};
+	hideNavigation?: boolean;
 }
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href.replace(
-  /\/+$/,
-  ""
+	/\/+$/,
+	"",
 );
 const { description, keywords, title, prev, next, hideNavigation } =
-  Astro.props;
+	Astro.props;
 ---
 
 <!doctype html>
