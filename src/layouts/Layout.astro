@@ -1,6 +1,6 @@
 ---
 import Navigation from "../components/Navigation.astro";
-import { getAdjacentPages } from "../data/navigation";
+import { getAdjacentPages, getBreadcrumbs } from "../data/navigation";
 
 interface Props {
 	description: string;
@@ -16,6 +16,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href.replace(
 const { description, keywords, title, hideNavigation, section } = Astro.props;
 
 const { prev, next } = getAdjacentPages(Astro.url.pathname);
+const breadcrumbs = getBreadcrumbs(Astro.url.pathname);
+const isHomePage = Astro.url.pathname.replace(/\/$/, "") === "";
 const buildDate = new Date().toISOString().split("T")[0];
 
 const titleFull = `${title} - Assistive Technology - Informatizzando la Disabilità`;
@@ -36,7 +38,7 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
     <meta property="og:title" content={titleFull} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content={isHomePage ? "website" : "article"} />
     <meta property="og:locale" content="it_IT" />
     <meta property="og:image" content="https://assistivetechnology.it/og-image.png" />
     <meta property="og:image:width" content="1200" />
@@ -85,6 +87,19 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
       "url": canonicalURL
     })}>
     </script>
+    {breadcrumbs.length > 1 && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbs.map((crumb, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "name": crumb.name,
+          "item": new URL(crumb.href, Astro.site).href,
+        })),
+      })}>
+      </script>
+    )}
     <title>{titleFull}</title>
   </head>
   <body>

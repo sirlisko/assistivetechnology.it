@@ -41,7 +41,10 @@ export const navigationPages: NavEntry[] = [
 		href: "/accessibilita-web/conclusione",
 		title: "3.5 Accessibilità Web - Conclusione",
 	},
-	{ href: "/accessibilita-web/legislazione", title: "3.6 - Legislazione Italiana" },
+	{
+		href: "/accessibilita-web/legislazione",
+		title: "3.6 - Legislazione Italiana",
+	},
 	{ href: "/appendice/braille", title: "Appendice A - Braille" },
 	{
 		href: "/appendice/classificazione-dispositivi-assistivi",
@@ -49,6 +52,45 @@ export const navigationPages: NavEntry[] = [
 	},
 	{ href: "/appendice/legge-stanca", title: "Appendice C - Legge Stanca" },
 ];
+
+const sectionCrumbs: Record<string, { name: string; href: string }> = {
+	introduzione: {
+		name: "Introduzione all'Assistive Technology",
+		href: "/introduzione/definizione",
+	},
+	accessibilita: { name: "Accessibilità", href: "/accessibilita/definizione" },
+	tecnologie: {
+		name: "Tecnologie",
+		href: "/accessibilita/tecnologie/introduzione",
+	},
+	"accessibilita-web": {
+		name: "Accessibilità Web",
+		href: "/accessibilita-web/definizione",
+	},
+	appendice: { name: "Appendici", href: "/appendice/braille" },
+};
+
+export function getBreadcrumbs(
+	pathname: string,
+): Array<{ name: string; href: string }> {
+	const path = pathname.replace(/\/$/, "");
+	const segments = path.split("/").filter(Boolean);
+	if (segments.length === 0) return [];
+
+	const crumbs: Array<{ name: string; href: string }> = [
+		{ name: "Indice", href: "/" },
+	];
+
+	for (let i = 0; i < segments.length - 1; i++) {
+		const section = sectionCrumbs[segments[i]];
+		if (section) crumbs.push(section);
+	}
+
+	const current = navigationPages.find((p) => p.href === path);
+	if (current) crumbs.push({ name: current.title, href: path });
+
+	return crumbs;
+}
 
 export function getAdjacentPages(currentPath: string): {
 	prev: NavEntry | undefined;
@@ -59,6 +101,9 @@ export function getAdjacentPages(currentPath: string): {
 	if (index === -1) return { prev: undefined, next: undefined };
 	return {
 		prev: index > 0 ? navigationPages[index - 1] : undefined,
-		next: index < navigationPages.length - 1 ? navigationPages[index + 1] : undefined,
+		next:
+			index < navigationPages.length - 1
+				? navigationPages[index + 1]
+				: undefined,
 	};
 }
