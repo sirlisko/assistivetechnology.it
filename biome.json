@@ -6,7 +6,8 @@
 		"useIgnoreFile": false
 	},
 	"files": {
-		"ignoreUnknown": false
+		"ignoreUnknown": false,
+		"includes": ["src/**", "*.json", "*.mjs", "*.ts"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -39,10 +40,6 @@
 			"includes": ["**/*.astro"],
 			"linter": {
 				"rules": {
-					"style": {
-						"useConst": "off",
-						"useImportType": "off"
-					},
 					"correctness": {
 						"noUnusedVariables": "off",
 						"noUnusedImports": "off"
