@@ -4,7 +4,6 @@ import { getAdjacentPages, getBreadcrumbs } from "../data/navigation";
 
 interface Props {
 	description: string;
-	keywords: string;
 	title: string;
 	section?: string;
 	hideNavigation?: boolean;
@@ -13,7 +12,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href.replace(
 	/\/+$/,
 	"",
 );
-const { description, keywords, title, hideNavigation, section } = Astro.props;
+const { description, title, hideNavigation, section } = Astro.props;
 
 const { prev, next } = getAdjacentPages(Astro.url.pathname);
 const breadcrumbs = getBreadcrumbs(Astro.url.pathname);
@@ -28,7 +27,6 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Luca Lischetti" />
     <meta name="theme-color" content="#005fcc" />
@@ -105,7 +103,7 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
   <body>
     <a href="#main" class="skip-link">Vai al contenuto principale</a>
     {!hideNavigation && <Navigation prev={prev} next={next} />}
-    <main id="main" role="main" lang="it">
+    <main id="main">
       <slot />
     </main>
     {!hideNavigation && <Navigation prev={prev} next={next} />}
