@@ -1,28 +1,21 @@
 ---
 import Navigation from "../components/Navigation.astro";
+import { getAdjacentPages } from "../data/navigation";
 
 interface Props {
 	description: string;
 	keywords: string;
 	title: string;
 	section?: string;
-	prev?: {
-		href: string;
-		title: string;
-	};
-	next?: {
-		href: string;
-		title: string;
-	};
 	hideNavigation?: boolean;
 }
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href.replace(
 	/\/+$/,
 	"",
 );
-const { description, keywords, title, prev, next, hideNavigation, section } =
-	Astro.props;
+const { description, keywords, title, hideNavigation, section } = Astro.props;
 
+const { prev, next } = getAdjacentPages(Astro.url.pathname);
 const buildDate = new Date().toISOString().split("T")[0];
 
 const titleFull = `${title} - Assistive Technology - Informatizzando la Disabilità`;
