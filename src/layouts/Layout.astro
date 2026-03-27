@@ -23,6 +23,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href.replace(
 const { description, keywords, title, prev, next, hideNavigation, section } =
 	Astro.props;
 
+const buildDate = new Date().toISOString().split("T")[0];
+
 const titleFull = `${title} - Assistive Technology - Informatizzando la Disabilità`;
 ---
 
@@ -51,26 +53,25 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
     <meta name="twitter:title" content={titleFull} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://assistivetechnology.it/og-image.png" />
-    <script is:inline type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Assistive Technology - Informatizzando la Disabilità",
-        "description": "Risorse sulla tecnologia assistiva e accessibilità web - Tesi di Luca Lischetti",
-        "url": "https://assistivetechnology.it",
-        "author": {
-          "@type": "Person",
-          "name": "Luca Lischetti",
-          "url": "https://sirlisko.com"
-        },
-        "inLanguage": "it-IT",
-        "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it",
-        "dateCreated": "2010-03-14",
-        "dateModified": "2012-06-01",
-        "keywords": "assistive technology, accessibilità web, disabilità, tecnologie assistive, W3C, WAI, WCAG"
-      }
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Assistive Technology - Informatizzando la Disabilità",
+      "description": "Risorse sulla tecnologia assistiva e accessibilità web - Tesi di Luca Lischetti",
+      "url": "https://assistivetechnology.it",
+      "author": {
+        "@type": "Person",
+        "name": "Luca Lischetti",
+        "url": "https://sirlisko.com"
+      },
+      "inLanguage": "it-IT",
+      "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it",
+      "dateCreated": "2010-03-14",
+      "dateModified": buildDate,
+      "keywords": "assistive technology, accessibilità web, disabilità, tecnologie assistive, W3C, WAI, WCAG"
+    })}>
     </script>
-    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+    <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": titleFull,
@@ -81,7 +82,7 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
         "url": "https://sirlisko.com"
       },
       "datePublished": "2010-03-14",
-      "dateModified": "2012-06-01",
+      "dateModified": buildDate,
       "isPartOf": {
         "@type": "Book",
         "name": "Assistive Technology - Informatizzando la Disabilità"
@@ -105,7 +106,7 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
         &copy; <a href="https://sirlisko.com" rel="noopener">Luca Lischetti</a> (<a
           href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it" rel="noopener"
           >licenza</a
-        >), scritto Gennaio - Marzo 2010, ultima modifica Giugno 2012.
+        >), scritto Gennaio - Marzo 2010.
       </p>
       <p>
         Codice del sito disponibile su Github <a
