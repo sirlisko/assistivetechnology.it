@@ -27,6 +27,7 @@
 		"@astrojs/check": "^0.9.4",
 		"@astrojs/sitemap": "^3.5.1",
 		"astro": "^5.13.3",
+		"sharp": "^0.34.5",
 		"typescript": "^5.9.2"
 	},
 	"repository": {
@@ -36,5 +37,11 @@
 	"license": "CC-BY-SA-4.0",
 	"devDependencies": {
 		"@biomejs/biome": "2.2.2"
+	},
+	"allowScripts": {
+		"sharp@0.33.5": true,
+		"sharp@0.34.5": true,
+		"esbuild@0.25.9": true,
+		"fsevents@2.3.3": true
 	}
 }

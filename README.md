@@ -10,7 +10,7 @@ Questo sito web statico, costruito con Astro, presenta i contenuti educativi del
 
 ## Contenuti
 
-- **Documento di tesi**: Il file PDF contenente il testo della tesi è disponibile [qui](./extras/Assistive%20Technology%20-%20Luca%20Lischetti.pdf)
+- **Documento di tesi**: Il file PDF contenente il testo della tesi è disponibile [qui](./public/assistive-technology-luca-lischetti.pdf)
 - **Sito web**: Versione web interattiva dei contenuti della tesi su [https://assistivetechnology.it](https://assistivetechnology.it)
 
 ## Sviluppo

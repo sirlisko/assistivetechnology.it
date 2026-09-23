@@ -51,6 +51,7 @@ export const navigationPages: NavEntry[] = [
 		title: "Appendice B - Classificazione Dispositivi Assistivi",
 	},
 	{ href: "/appendice/legge-stanca", title: "Appendice C - Legge Stanca" },
+	{ href: "/aggiornamento", title: "Aggiornamento 2026" },
 ];
 
 const sectionCrumbs: Record<string, { name: string; href: string }> = {

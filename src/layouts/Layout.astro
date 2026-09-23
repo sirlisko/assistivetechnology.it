@@ -7,17 +7,20 @@ interface Props {
 	title: string;
 	section?: string;
 	hideNavigation?: boolean;
+	noindex?: boolean;
 }
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href.replace(
 	/\/+$/,
 	"",
 );
-const { description, title, hideNavigation, section } = Astro.props;
+const { description, title, hideNavigation, section, noindex } = Astro.props;
 
 const { prev, next } = getAdjacentPages(Astro.url.pathname);
 const breadcrumbs = getBreadcrumbs(Astro.url.pathname);
 const isHomePage = Astro.url.pathname.replace(/\/$/, "") === "";
-const buildDate = new Date().toISOString().split("T")[0];
+const isArticle = !isHomePage && !noindex;
+// Bump when page content changes; the build date would claim every deploy is a content update.
+const dateModified = "2026-09-24";
 
 const titleFull = `${title} - Assistive Technology - Informatizzando la Disabilità`;
 ---
@@ -30,6 +33,7 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Luca Lischetti" />
     <meta name="theme-color" content="#005fcc" />
+    {noindex && <meta name="robots" content="noindex" />}
     <link type="text/plain" rel="author" href="/humans.txt" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="canonical" href={canonicalURL} />
@@ -60,11 +64,11 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
       "inLanguage": "it-IT",
       "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it",
       "dateCreated": "2010-03-14",
-      "dateModified": buildDate,
+      "dateModified": dateModified,
       "keywords": "assistive technology, accessibilità web, disabilità, tecnologie assistive, W3C, WAI, WCAG"
     })}>
     </script>
-    <script type="application/ld+json" set:html={JSON.stringify({
+    {isArticle && <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": titleFull,
@@ -75,7 +79,7 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
         "url": "https://sirlisko.com"
       },
       "datePublished": "2010-03-14",
-      "dateModified": buildDate,
+      "dateModified": dateModified,
       "isPartOf": {
         "@type": "Book",
         "name": "Assistive Technology - Informatizzando la Disabilità"
@@ -84,7 +88,7 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
       "inLanguage": "it-IT",
       "url": canonicalURL
     })}>
-    </script>
+    </script>}
     {breadcrumbs.length > 1 && (
       <script type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
@@ -125,6 +129,37 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
 </html>
 
 <style is:global>
+  :root {
+    color-scheme: light dark;
+    --bg: #fff;
+    --text: #222;
+    --text-muted: #666;
+    --nav: #767676;
+    --border: #000;
+    --focus: #005fcc;
+    --target: #def;
+    --link: #0000ee;
+    --link-visited: #551a8b;
+    --notice-bg: #fff8e1;
+    --notice-border: #e0b000;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212;
+      --text: #e6e6e6;
+      --text-muted: #b0b0b0;
+      --nav: #a0a0a0;
+      --border: #888;
+      --focus: #8ab4f8;
+      --target: #1d3a5c;
+      --link: #8ab4f8;
+      --link-visited: #c9a6ff;
+      --notice-bg: #2b2513;
+      --notice-border: #a07d00;
+    }
+  }
+
   /* Skip Link */
   .skip-link {
     position: absolute;
@@ -150,6 +185,8 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
   /* Base Styles */
   body {
     font-family: tahoma, arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,9 +195,17 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
   }
 
   /* Focus Indicators */
+  a {
+    color: var(--link);
+  }
+
+  a:visited {
+    color: var(--link-visited);
+  }
+
   a:focus,
   button:focus {
-    outline: 2px solid #005fcc;
+    outline: 2px solid var(--focus);
     outline-offset: 2px;
   }
 
@@ -175,7 +220,7 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
   }
 
   td {
-    border: 1px solid #000;
+    border: 1px solid var(--border);
   }
 
   /* Headings */
@@ -258,7 +303,7 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
 
   /* Article and Content */
   article {
-    color: #222;
+    color: var(--text);
     line-height: 150%;
     max-width: 850px;
   }
@@ -292,7 +337,7 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
   /* Footer */
   footer {
     text-align: center;
-    color: #666;
+    color: var(--text-muted);
     font-size: 90%;
     line-height: 150%;
     margin-top: 2em;
@@ -309,6 +354,10 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
     line-break: anywhere;
   }
 
+  .referenze h2 {
+    font-size: 1.1em;
+  }
+
   .referenze li {
     line-height: 2;
   }
@@ -320,8 +369,9 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
 
   /* Target Highlighting */
   :target {
-    background-color: #def;
+    background-color: var(--target);
   }
+
 
   /* Responsive Pre Elements */
   @media (max-width: 650px) {
@@ -335,11 +385,13 @@ const titleFull = `${title} - Assistive Technology - Informatizzando la Disabili
   img {
     max-width: 100%;
     height: auto;
+    /* Some diagrams are black on transparent and vanish on a dark background */
+    background: #fff;
   }
 
   /* Touch Targets for Mobile */
   @media (max-width: 768px) {
-    a,
+    nav a,
     button {
       display: inline-block;
     }
