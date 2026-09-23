@@ -1,4 +1,8 @@
 ---
+import { Image } from "astro:assets";
+import logoAccessibilitaNoAsterischi from "../../assets/imgs/logo_accessibilita_no_asterischi.png";
+import logoAccessibiltaAsterischi from "../../assets/imgs/logo_accessibilta_asterischi.png";
+import NotaStorica from "../../components/NotaStorica.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -12,6 +16,9 @@ import Layout from "../../layouts/Layout.astro";
       <span class="capitolo">Capitolo 3: Accessibilità Web</span>3.6
       Legislazione Italiana
     </h1>
+    <NotaStorica>
+      i requisiti tecnici descritti (DM 8 luglio 2005) sono stati sostituiti dalle <a href="https://www.agid.gov.it/it/ambiti-intervento/accessibilita-usabilita">Linee guida AgID sull'accessibilità</a>, basate sulla norma europea EN 301 549 e quindi sulle WCAG.
+    </NotaStorica>
     <p>
       L'Italia seguendo le indicazioni dell'<em>Unione Europea</em> e basandosi
       sia sulle direttive del <em>W3C</em>, presenti nella specifica <em
@@ -82,7 +89,7 @@ import Layout from "../../layouts/Layout.astro";
         ><a href="#cite_note_3">[3]</a></sup
       ></em
     >
-    <h4>Requisito n. 1</h4>
+    <h3>Requisito n. 1</h3>
     <p>
       Realizzare le pagine e gli oggetti al loro interno utilizzando tecnologie
       definite da grammatiche formali pubblicate nelle versioni più recenti
@@ -128,7 +135,7 @@ import Layout from "../../layouts/Layout.astro";
         </ol>
       </li>
     </ol>
-    <h4>Requisito n. 2</h4>
+    <h3>Requisito n. 2</h3>
     <p>
       Non è consentito l'uso dei frame nella realizzazione di nuovi siti. In
       sede di prima applicazione, per i siti Web esistenti già realizzati con
@@ -157,7 +164,7 @@ import Layout from "../../layouts/Layout.astro";
         l'informatica nella pubblica amministrazione.
       </li>
     </ol>
-    <h4>Requisito n. 3</h4>
+    <h3>Requisito n. 3</h3>
     <p>
       Fornire una alternativa testuale equivalente per ogni oggetto non di testo
       presente in una pagina e garantire che quando il contenuto non testuale di
@@ -166,13 +173,13 @@ import Layout from "../../layouts/Layout.astro";
       un oggetto non testuale deve essere commisurata alla funzione esercitata
       dall'oggetto originale nello specifico contesto.
     </p>
-    <h4>Requisito n. 4</h4>
+    <h3>Requisito n. 4</h3>
     <p>
       Garantire che tutti gli elementi informativi e tutte le funzionalità siano
       disponibili anche in assenza del particolare colore utilizzato per
       presentarli nella pagina.
     </p>
-    <h4>Requisito n. 5</h4>
+    <h3>Requisito n. 5</h3>
     <p>
       Evitare oggetti e scritte lampeggianti o in movimento le cui frequenze di
       intermittenza possano provocare disturbi da epilessia fotosensibile o
@@ -182,7 +189,7 @@ import Layout from "../../layouts/Layout.astro";
       rischio prima di presentarli e predisporre metodi che consentano di
       evitare tali elementi.
     </p>
-    <h4>Requisito n. 6</h4>
+    <h3>Requisito n. 6</h3>
     <p>
       Garantire che siano sempre distinguibili il contenuto informativo
       (foreground) e lo sfondo (background), ricorrendo a un sufficiente
@@ -191,38 +198,38 @@ import Layout from "../../layouts/Layout.astro";
       immagini; ove non sia possibile, ricorrere agli stessi criteri di
       distinguibilità indicati in precedenza.
     </p>
-    <h4>Requisito n. 7</h4>
+    <h3>Requisito n. 7</h3>
     <p>
       Utilizzare mappe immagine sensibili di tipo lato client piuttosto che lato
       server, salvo il caso in cui le zone sensibili non possano essere definite
       con una delle forme geometriche predefinite indicate nella DTD adottata.
     </p>
-    <h4>Requisito n.</h4> 8
+    <h3>Requisito n.</h3> 8
     <p>
       In caso di utilizzo di mappe immagine lato server, fornire i collegamenti
       di testo alternativi necessari per ottenere tutte le informazioni o i
       servizi raggiungibili interagendo direttamente con la mappa.
     </p>
-    <h4>Requisito n. 9</h4>
+    <h3>Requisito n. 9</h3>
     <p>
       Per le tabelle dati usare gli elementi (marcatori) e gli attributi
       previsti dalla DTD adottata per descrivere i contenuti e identificare le
       intestazioni di righe e colonne.
     </p>
-    <h4>Requisito n. 10</h4>
+    <h3>Requisito n. 10</h3>
     <p>
       Per le tabelle dati usare gli elementi (marcatori) e gli attributi
       previsti nella DTD adottata per associare le celle di dati e le celle di
       intestazione che hanno due o più livelli logici di intestazione di righe o
       colonne.
     </p>
-    <h4>Requisito n</h4>. 11
+    <h3>Requisito n</h3>. 11
     <p>
       Usare i fogli di stile per controllare la presentazione dei contenuti e
       organizzare le pagine in modo che possano essere lette anche quando i
       fogli di stile siano disabilitati o non supportati.
     </p>
-    <h4>Requisito n. 12</h4>
+    <h3>Requisito n. 12</h3>
     <p>
       La presentazione e i contenuti testuali di una pagina devono potersi
       adattare alle dimensioni della finestra del browser utilizzata dall'utente
@@ -231,7 +238,7 @@ import Layout from "../../layouts/Layout.astro";
       ridimensionamento, ingrandimento o riduzione dell'area di visualizzazione
       o dei caratteri rispetto ai valori predefiniti di tali parametri.
     </p>
-    <h4>Requisito n. 13</h4>
+    <h3>Requisito n. 13</h3>
     <p>
       In caso di utilizzo di tabelle a scopo di impaginazione, garantire che il
       contenuto della tabella sia comprensibile anche quando questa viene letta
@@ -239,13 +246,13 @@ import Layout from "../../layouts/Layout.astro";
       tabella rispettandone il valore semantico definito nella specifica del
       linguaggio a marcatori utilizzato.
     </p>
-    <h4>Requisito n. 1</h4>4
+    <h3>Requisito n. 1</h3>4
     <p>
       Nei moduli (form), associare in maniera esplicita le etichette ai
       rispettivi controlli, posizionandole in modo che sia agevolata la
       compilazione dei campi da parte di chi utilizza le tecnologie assistive.
     </p>
-    <h4>Requisito n. 15</h4>
+    <h3>Requisito n. 15</h3>
     <p>
       Garantire che le pagine siano utilizzabili quando script, applet, o altri
       oggetti di programmazione sono disabilitati oppure non supportati; ove ciò
@@ -253,20 +260,20 @@ import Layout from "../../layouts/Layout.astro";
       svolta e garantire una alternativa testuale equivalente, in modo analogo a
       quanto indicato nel requisito n. 3.
     </p>
-    <h4>Requisito n. 16</h4>
+    <h3>Requisito n. 16</h3>
     <p>
       Garantire che i gestori di eventi che attivano script, applet o altri
       oggetti di programmazione o che possiedono una propria specifica
       interfaccia, siano indipendenti da uno specifico dispositivo di input.
     </p>
-    <h4>Requisito n. 17</h4>
+    <h3>Requisito n. 17</h3>
     <p>
       Garantire che le funzionalità e le informazioni veicolate per mezzo di
       oggetti di programmazione, oggetti che utilizzano tecnologie non definite
       da grammatiche formali pubblicate, script e applet siano direttamente
       accessibili.
     </p>
-    <h4>Requisito n. 18</h4>
+    <h3>Requisito n. 18</h3>
     <p>
       Nel caso in cui un filmato o una presentazione multimediale siano
       indispensabili per la completezza dell'informazione fornita o del servizio
@@ -276,7 +283,7 @@ import Layout from "../../layouts/Layout.astro";
       multimediale tenendo conto del livello di importanza e delle difficoltà di
       realizzazione nel caso di trasmissioni in tempo reale.
     </p>
-    <h4>Requisito n. 19</h4>
+    <h3>Requisito n. 19</h3>
     <p>
       Rendere chiara la destinazione di ciascun collegamento ipertestuale (link)
       con testi significativi anche se letti indipendentemente dal proprio
@@ -285,7 +292,7 @@ import Layout from "../../layouts/Layout.astro";
       consentano di evitare la lettura ripetitiva di sequenze di collegamenti
       comuni a più pagine.
     </p>
-    <h4>Requisito n. 20</h4>
+    <h3>Requisito n. 20</h3>
     <p>
       Nel caso che per la fruizione del servizio erogato in una pagina è
       previsto un intervallo di tempo predefinito entro il quale eseguire
@@ -293,7 +300,7 @@ import Layout from "../../layouts/Layout.astro";
       indicando il tempo massimo consentito e le alternative per fruire del
       servizio stesso.
     </p>
-    <h4>Requisito n. 21</h4>
+    <h3>Requisito n. 21</h3>
     <p>
       Rendere selezionabili e attivabili tramite comandi da tastiere o
       tecnologie in emulazione di tastiera o tramite sistemi di puntamento
@@ -305,7 +312,7 @@ import Layout from "../../layouts/Layout.astro";
       0,5 em e che le dimensioni dei pulsanti in un modulo siano tali da rendere
       chiaramente leggibile l'etichetta in essi contenuta.
     </p>
-    <h4>Requisito n. 22</h4>
+    <h3>Requisito n. 22</h3>
     <p>
       Per le pagine di siti esistenti che non possano rispettare i su elencati
       requisiti (pagine non accessibili), in sede di prima applicazione, fornire
@@ -322,39 +329,39 @@ import Layout from "../../layouts/Layout.astro";
         ><a href="#cite_note_4">[4]</a></sup
       ></em
     >
-    <h4>Requisito n. 1</h4>
+    <h3>Requisito n. 1</h3>
     <p>
       Il computer deve potersi collegare mediante canali standard a sistemi di
       accensione remota.
     </p>
-    <h4>Requisito n. 2</h4>
+    <h3>Requisito n. 2</h3>
     <p>
       I tasti e i pulsanti devono essere raggiungibili ed operabili con minima
       abilità e con una forza massima di 2,3 Kg (pari a circa 22,2 N).
     </p>
-    <h4>Requisito n. 3</h4>
+    <h3>Requisito n. 3</h3>
     <p>
       I tasti e i pulsanti devono essere tattilmente percepibili, senza
       necessità di attivarli.
     </p>
-    <h4>Requisito n. 4</h4>
+    <h3>Requisito n. 4</h3>
     <p>
       In presenza della funzionalità di ripetizione dei tasti, l'intervallo di
       tempo sia per la prima ripetizione che per le ripetizioni successive, deve
       essere configurabile in almeno 2 secondi.
     </p>
-    <h4>Requisito n. 5</h4>
+    <h3>Requisito n. 5</h3>
     <p>
       Il diverso stato di attivazione dei tasti selezionati o bloccati deve
       essere percepibile, oltre che visivamente, anche attraverso il tatto o
       l'udito.
     </p>
-    <h4>Requisito n. 6</h4>
+    <h3>Requisito n. 6</h3>
     <p>
       Deve essere presente almeno una porta di comunicazione conforme agli
       standard industriali.
     </p>
-    <h4>Requisito n. 7</h4>
+    <h3>Requisito n. 7</h3>
     <p>
       Qualora venga utilizzata una forma di identificazione biometrica, deve
       essere fornita una forma alternativa di identificazione.
@@ -366,66 +373,66 @@ import Layout from "../../layouts/Layout.astro";
         ><a href="#cite_note_5">[5]</a></sup
       ></em
     >
-    <h4>Requisito n. 1</h4>
+    <h3>Requisito n. 1</h3>
     <p>
       Le funzioni previste dall'interfaccia utente devono poter essere attivate
       anche attraverso comandi da tastiera nei casi in cui possa essere fornita
       una descrizione della funzione stessa o del risultato della sua
       esecuzione.
     </p>
-    <h4>Requisito n. 2</h4>
+    <h3>Requisito n. 2</h3>
     <p>
       Comandi e funzionalità dell'interfaccia utente non devono limitare o
       disabilitare le caratteristiche e le funzionalità di accessibilità
       dell'ambiente operativo documentate e rese disponibili dal produttore
       dell'ambiente stesso.
     </p>
-    <h4>Requisito n. 3</h4>
+    <h3>Requisito n. 3</h3>
     <p>
       L'applicazione deve rendere disponibili sufficienti informazioni, quali
       gli elementi identificativi, le operazioni possibili e lo stato, sugli
       oggetti contenuti nell'interfaccia utente affinché le tecnologie assistive
       possano identificarli interpretandone le funzionalità.
     </p>
-    <h4>Requisito n. 4</h4>
+    <h3>Requisito n. 4</h3>
     <p>
       Nel caso di simboli grafici utilizzati per identificare controlli,
       indicatori di stato o altri elementi di programma, il significato
       assegnato a tali simboli deve essere coerente nell'ambito dell'intera
       applicazione, ivi compresa l'interfaccia utente.
     </p>
-    <h4>Requisito n. 5</h4>
+    <h3>Requisito n. 5</h3>
     <p>
       Le informazioni di tipo testuale devono essere fornite utilizzando le
       funzionalità dell'ambiente operativo previste per la visualizzazione del
       testo; in particolare devono essere disponibili il contenuto testuale, la
       locazione del punto di inserimento e gli attributi del testo.
     </p>
-    <h4>Requisito n. 6</h4>
+    <h3>Requisito n. 6</h3>
     <p>
       L'applicazione che utilizza segnalazioni audio deve prevedere una
       funzionalità equivalente di tipo visivo, seguendo le eventuali convenzioni
       dell'ambiente operativo.
     </p>
-    <h4>Requisito n. 7</h4>
+    <h3>Requisito n. 7</h3>
     <p>
       Per fornire informazioni, per indicare o per richiedere azioni non devono
       essere utilizzati unicamente animazioni, elementi grafici o sonori e
       differenze di colori.
     </p>
-    <h4>Requisito n. 8</h4>
+    <h3>Requisito n. 8</h3>
     <p>
       Le applicazioni non devono sovrapporsi alle scelte effettuate dall'utente
       riguardo a livelli di contrasto, colori ed altri attributi di
       visualizzazione.
     </p>
-    <h4>Requisito n. 9</h4>
+    <h3>Requisito n. 9</h3>
     <p>
       L'interfaccia utente non deve contenere elementi di testo, oggetti o altri
       elementi lampeggianti aventi una frequenza di intermittenza maggiore di
       2Hz e minore di 55Hz.
     </p>
-    <h4>Requisito n. 10</h4>
+    <h3>Requisito n. 10</h3>
     <p>
       L'elemento attivo "focus" di una interfaccia utente deve essere
       chiaramente identificabile; la identificazione e la variazione del focus
@@ -434,7 +441,7 @@ import Layout from "../../layouts/Layout.astro";
       adeguatamente segnalati gli elementi che richiedono obbligatoriamente
       un'azione da parte dell'utente.
     </p>
-    <h4>Requisito n. 11</h4>
+    <h3>Requisito n. 11</h3>
     <p>
       La documentazione di supporto al prodotto e le caratteristiche di
       accessibilità devono essere rese disponibili anche in formato elettronico
@@ -452,59 +459,59 @@ import Layout from "../../layouts/Layout.astro";
       serie di criteri essenziali su cui basare una verifica soggettiva dei siti
       Web e delle applicazioni realizzate con tecnologie Internet.
     </p>
-    <h4>Percezione</h4>
+    <h3>Percezione</h3>
     <p>
       Informazioni e comandi necessari per l'esecuzione dell'attività devono
       essere sempre disponibili e percettibili;
     </p>
-    <h4>Comprensibilità</h4>
+    <h3>Comprensibilità</h3>
     <p>
       Informazioni e comandi necessari per l'esecuzione delle attività devono
       essere facili da capire e da usare;
     </p>
-    <h4>Operabilità</h4>
+    <h3>Operabilità</h3>
     <p>
       Informazioni e comandi devono consentire una scelta immediata della azione
       adeguata per raggiungere l'obiettivo voluto;
     </p>
-    <h4>Coerenza</h4>
+    <h3>Coerenza</h3>
     <p>
       Simboli, messaggi e azioni devono avere lo stesso significato in tutto
       l'ambiente; salvaguardia della salute (safety): l'ambiente deve possedere
       caratteristiche idonee a salvaguardare il benessere psicofisico
       dell'utente;
     </p>
-    <h4>Sicurezza</h4>
+    <h3>Sicurezza</h3>
     <p>
       L'ambiente deve possedere caratteristiche idonee a fornire transazioni e
       dati affidabili, gestiti con adeguati livelli di sicurezza;
     </p>
-    <h4>Trasparenza</h4>
+    <h3>Trasparenza</h3>
     <p>
       L'ambiente deve comunicare all'utente lo stato, gli effetti delle azioni
       compiute e le informazioni necessarie per la corretta valutazione della
       dinamica dell'ambiente stesso;
     </p>
-    <h4>Apprendibilità</h4>
+    <h3>Apprendibilità</h3>
     <p>
       L'ambiente deve possedere caratteristiche di utilizzo di facile e rapido
       apprendimento; aiuto e documentazione: funzioni di aiuto, quali le guide
       in linea, e documentazione relativa al funzionamento dell'ambiente devono
       essere di facili reperimento e connesse al compito svolto dall'utente;
     </p>
-    <h4>Tolleranza agli errori</h4>
+    <h3>Tolleranza agli errori</h3>
     <p>
       L'ambiente, pur configurandosi in modo da prevenire gli errori, ove
       questi, comunque, si manifestino, deve fornire appropriati messaggi che
       individuino chiaramente l'errore occorso e le azioni necessarie per
       superarlo;
     </p>
-    <h4>Gradevolezza</h4>
+    <h3>Gradevolezza</h3>
     <p>
       L'ambiente deve possedere caratteristiche idonee a favorire e mantenere
       l'interesse dell'utente;
     </p>
-    <h4>Flessibilità</h4>
+    <h3>Flessibilità</h3>
     <p>
       L'ambiente deve tener conto delle preferenze individuali e dei contesti.
     </p>
@@ -536,7 +543,7 @@ import Layout from "../../layouts/Layout.astro";
       umane stilizzate le quali fuoriescono dallo schermo a braccia levate.
       Questo logo risponde ai vari livelli di accessibilità.
     </p>
-    <h4>Logo senza asterischi</h4>
+    <h3>Logo senza asterischi</h3>
     <p>
       Il logo senza asterischi risponde al primo livello di accessibilità,
       legato alla conformità ai requisiti previsti per la verifica tecnica,
@@ -544,12 +551,9 @@ import Layout from "../../layouts/Layout.astro";
       questo livello di accessibilità è il seguente:
     </p>
     <figure>
-      <img
-        src="/imgs/logo_accessibilita_no_asterischi.png"
-        alt="logo accessibilita no asterischi"
-      />
+      <Image src={logoAccessibilitaNoAsterischi} alt="Logo di accessibilità: due figure stilizzate, una blu e una rossa, con le braccia alzate sopra uno schermo di computer giallo" />
     </figure>
-    <h4>Logo con asterischi</h4>
+    <h3>Logo con asterischi</h3>
     <p>
       Consiste nello stesso disegno sopra descritto con l'aggiunta di
       asterischi. Questa tipologia di logo garantisce la conformità ai requisiti
@@ -564,17 +568,14 @@ import Layout from "../../layouts/Layout.astro";
       attesta il raggiungimento del massimo livello di accessibilità Web.
     </p>
     <figure>
-      <img
-        src="/imgs/logo_accessibilta_asterischi.png"
-        alt="logo accessibilta asterischi"
-      />
+      <Image src={logoAccessibiltaAsterischi} alt="Lo stesso logo di accessibilità con tre asterischi sulla tastiera sotto lo schermo" />
     </figure>
     <section class="referenze">
-      <h4>Referenze</h4>
+      <h2>Referenze</h2>
       <ol>
         <li id="cite_note_1">
           <a href="#cite_ref_1">^</a>
-          <a href="http://www.section508.gov/" rel="noopener">http://www.section508.gov/</a> -
+          <a href="https://www.section508.gov/" rel="noopener">https://www.section508.gov/</a> -
           sezione 508 del Governo degli Stati Uniti.
         </li>
         <li id="cite_note_2">
@@ -585,35 +586,35 @@ import Layout from "../../layouts/Layout.astro";
         </li>
         <li id="cite_note_3">
           <a href="#cite_ref_3">^</a>
-          <a href="http://www.pubbliaccesso.gov.it/normative/DM080705-a.htm" rel="noopener"
+          <a href="https://web.archive.org/web/20110722035319/http://www.pubbliaccesso.gov.it/normative/DM080705-A.htm" rel="noopener"
             >http://www.pubbliaccesso.gov.it/normative/DM080705-a.htm</a
           >
            - link al D.M. 8 luglio 2005 - Allegato A.
         </li>
         <li id="cite_note_4">
           <a href="#cite_ref_4">^</a>
-          <a href="http://www.pubbliaccesso.gov.it/normative/DM080705-C.htm" rel="noopener"
+          <a href="https://web.archive.org/web/20080516074748/http://www.pubbliaccesso.gov.it/normative/DM080705-C.htm" rel="noopener"
             >http://www.pubbliaccesso.gov.it/normative/DM080705-C.htm</a
           >
            - link al D.M. 8 luglio 2005 - Allegato C.
         </li>
         <li id="cite_note_5">
           <a href="#cite_ref_5">^</a>
-          <a href="http://www.pubbliaccesso.gov.it/normative/DM080705-D.htm" rel="noopener"
+          <a href="https://web.archive.org/web/20080516041742/http://www.pubbliaccesso.gov.it/normative/DM080705-D.htm" rel="noopener"
             >http://www.pubbliaccesso.gov.it/normative/DM080705-D.htm</a
           >
            - link al D.M. 8 luglio 2005 - Allegato D.
         </li>
         <li id="cite_note_6">
           <a href="#cite_ref_6">^</a>
-          <a href="http://www.pubbliaccesso.gov.it/normative/DM080705-B.htm" rel="noopener"
+          <a href="https://web.archive.org/web/20080510103202/http://www.pubbliaccesso.gov.it/normative/DM080705-B.htm" rel="noopener"
             >http://www.pubbliaccesso.gov.it/normative/DM080705-B.htm</a
           >
            - link al D.M. 8 luglio 2005 - Allegato B.
         </li>
         <li id="cite_note_7">
           <a href="#cite_ref_7">^</a>
-          <a href="http://www.pubbliaccesso.gov.it/normative/DM080705-E.htm" rel="noopener"
+          <a href="https://web.archive.org/web/20080510103142/http://www.pubbliaccesso.gov.it/normative/DM080705-E.htm" rel="noopener"
             >http://www.pubbliaccesso.gov.it/normative/DM080705-E.htm</a
           >
            - link al D.M. 8 luglio 2005 - Allegato E.

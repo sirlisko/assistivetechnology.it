@@ -2,8 +2,17 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="404 - Ops!" description="Pagina non trovata.">
-  Errore! Torna alla home page <a href="https://assistivetechnology.it" rel="noopener"
-    >https://assistivetechnology.it</a
-  >
+<Layout
+  title="Pagina non trovata"
+  description="Pagina non trovata."
+  hideNavigation
+  noindex
+>
+  <article>
+    <h1>Pagina non trovata</h1>
+    <p>
+      La pagina che cerchi non esiste o è stata spostata. Puoi tornare
+      all'<a href="/">indice della tesi</a>.
+    </p>
+  </article>
 </Layout>

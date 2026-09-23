@@ -1,4 +1,8 @@
 ---
+import { Image } from "astro:assets";
+import brailleAlfabeto from "../../assets/imgs/braille-alfabeto.png";
+import brailleCella from "../../assets/imgs/braille-cella.png";
+import brailleCella8 from "../../assets/imgs/braille-cella-8.png";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -30,7 +34,7 @@ import Layout from "../../layouts/Layout.astro";
       in due colonne e tre righe.
     </p>
     <figure>
-      <img src="/imgs/braille-cella.png" alt="esempio cella braille" width="321" height="216" />
+      <Image src={brailleCella} alt="Cella braille di sei punti disposti in due colonne da tre, numerati da 1 a 3 a sinistra e da 4 a 6 a destra" />
     </figure>
     <p>
       I punti sono numerati dall'1 al 6, secondo lo schema appena illustrato. La
@@ -45,12 +49,7 @@ import Layout from "../../layouts/Layout.astro";
       si possono rappresentare 255 segni.
     </p>
     <figure>
-      <img
-        src="/imgs/braille-cella-8.png"
-        alt="esempio cella braille a 8 punti"
-        width="240"
-        height="280"
-      />
+      <Image src={brailleCella8} alt="Cella braille di otto punti disposti in due colonne da quattro, numerati da 1 a 4 a sinistra e da 5 a 8 a destra" />
     </figure>
     <p>
       Nonostante l'introduzione della cella a 8 punti la rappresentazione più
@@ -58,14 +57,14 @@ import Layout from "../../layouts/Layout.astro";
     </p>
     <h2>L'alfabeto</h2>
     <figure>
-      <img src="/imgs/braille-alfabeto.png" alt="alfabeto braille" width="1003" height="274" />
+      <Image src={brailleAlfabeto} alt="Tabella con le 26 lettere dell'alfabeto dalla a alla z, ciascuna affiancata dal corrispondente carattere braille" />
     </figure>
     <section class="referenze">
-      <h4>Referenze</h4>
+      <h2>Referenze</h2>
       <ol>
         <li id="cite_note_1">
           <a href="#cite_ref_1">^</a> Fonte: Unione Italiana Ciechi, sezione di
-          Frosinone <a href="http://www.uicfrosinone.it/" rel="noopener"
+          Frosinone <a href="https://web.archive.org/web/20091229104523/http://www.uicfrosinone.it:80/" rel="noopener"
             >http://www.uicfrosinone.it/</a
           >.
         </li>

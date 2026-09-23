@@ -1,5 +1,6 @@
 ---
 import { Code } from "astro:components";
+import NotaStorica from "../../components/NotaStorica.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -13,6 +14,9 @@ import Layout from "../../layouts/Layout.astro";
       <span class="capitolo">Capitolo 3: Accessibilità Web</span>3.3.2 Web
       Content Accessibility Guidelines (WCAG)
     </h1>
+    <NotaStorica>
+      descrive versioni delle WCAG oggi superate. La versione attuale è <a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2</a>, pubblicata nel 2023.
+    </NotaStorica>
     <p>
       La specifica <em>WCAG - Web Content Accessibility Guidelines</em> (<em
         >Linea guida per l'Accessibilità dei Contenuti Web</em
@@ -33,7 +37,7 @@ import Layout from "../../layouts/Layout.astro";
       <li><strong>Comprensibile</strong> (argomenti da 13 - 16)</li>
       <li><strong>Durevole</strong> (argomenti da 17 - 19)</li>
     </ol>
-    <h3>Principio 1: PERCEPIBILE</h3>
+    <h2>Principio 1: PERCEPIBILE</h2>
     <p><em><strong>I contenuti devono essere percepibili</strong></em></p>
     <p>
       Il principio numero uno si riferisce alla percettibilità dei contenuti,
@@ -46,7 +50,7 @@ import Layout from "../../layouts/Layout.astro";
       <li><em><strong>Separare la presentazione dal contenuto</strong></em></li>
       <li><em><strong>Sincronizzare gli elementi multimediali</strong></em></li>
     </ul>
-    <h4>Utilizzare equivalenti testuali</h4>
+    <h3>Utilizzare equivalenti testuali</h3>
     <p>
       <strong>1.1</strong> - <em
         >Per i contenuti non testuali, fornire un testo equivalente che abbia lo
@@ -64,7 +68,7 @@ import Layout from "../../layouts/Layout.astro";
         >.</em
       >
     </p>
-    <h4>Separare la presentazione dal contenuto</h4>
+    <h3>Separare la presentazione dal contenuto</h3>
     <p>
       <strong>1.3</strong> - <em
         >Le informazioni, la funzionalità e la struttura sono separabili dalla
@@ -76,7 +80,7 @@ import Layout from "../../layouts/Layout.astro";
         >La struttura è resa percepibile attraverso la presentazione.</em
       >
     </p>
-    <h4>Sincronizzare gli elementi multimediali</h4>
+    <h3>Sincronizzare gli elementi multimediali</h3>
     <p>
       <strong>1.2</strong> - <em
         >Fornire media equivalenti sincronizzati per le presentazioni dipendenti
@@ -97,7 +101,7 @@ import Layout from "../../layouts/Layout.astro";
         facilmente distinguibile dallo sfondo.</em
       >
     </p>
-    <h3>Principio 2: FRUIBILE</h3>
+    <h2>Principio 2: FRUIBILE</h2>
     <p>
       <em
         ><strong
@@ -122,7 +126,7 @@ import Layout from "../../layouts/Layout.astro";
       <li><em><strong>Controllare i tempi di esecuzione</strong></em></li>
       <li><em><strong>Evitare intermittenze nello schermo</strong></em></li>
     </ul>
-    <h4>Fornire interfacce utilizzabili almeno con tastiera</h4>
+    <h3>Fornire interfacce utilizzabili almeno con tastiera</h3>
     <p>
       <strong>2.1</strong> - <em
         >Tutte le funzionalità sono fruibili almeno attraverso tastiera o
@@ -149,7 +153,7 @@ import Layout from "../../layouts/Layout.astro";
        (esempi: scrittura nelle form, scelta da lista opzioni, spell checker,
       diverse tipologie di ricerca nei search engine.)
     </p>
-    <h4>Controllare i tempi di esecuzione</h4>
+    <h3>Controllare i tempi di esecuzione</h3>
     <p>
       <strong>2.2</strong> - <em
         >Gli utenti possono controllare in qualsiasi momento i tempi di lettura,
@@ -160,7 +164,7 @@ import Layout from "../../layouts/Layout.astro";
       dialoghi che scompaiono, aggiornamenti con refresh, animazioni, filmati),
       possibilità di disattivare animazioni e movimenti.)
     </p>
-    <h4>Evitare intermittenze nello schermo</h4>
+    <h3>Evitare intermittenze nello schermo</h3>
     <p>
       <strong>2.3</strong> - <em
         >Consentire agli utenti di evitare le intermittenze dello schermo.</em
@@ -168,7 +172,7 @@ import Layout from "../../layouts/Layout.astro";
        Questo punto è stato espressamente creato per gli utenti che soffrono di
       epilessia fotosensibile e difficoltà di concentrazione.
     </p>
-    <h3>Principio 3: COMPRENSIBILE</h3>
+    <h2>Principio 3: COMPRENSIBILE</h2>
     <p>
       <em
         ><strong
@@ -189,14 +193,14 @@ import Layout from "../../layouts/Layout.astro";
       </li>
       <li><em><strong>Creare uno stile coerente</strong></em></li>
     </ul>
-    <h4>Identificare la lingua utilizzata</h4>
+    <h3>Identificare la lingua utilizzata</h3>
     <p>
       <strong>3.1</strong> - <em
         >Rendere identificabile al programma utente la lingua utilizzata nei
         contenuti.</em
       >
     </p>
-    <h4>Utilizzare un linguaggio chiaro e semplice</h4>
+    <h3>Utilizzare un linguaggio chiaro e semplice</h3>
     <p>
       <strong>3.2</strong> - <em
         >La definizione delle abbreviazioni e degli acronimi è determinabile
@@ -209,7 +213,7 @@ import Layout from "../../layouts/Layout.astro";
         con linguaggio chiaro e semplice.</em
       >
     </p>
-    <h4>Creare uno stile coerente</h4>
+    <h3>Creare uno stile coerente</h3>
     <p>
       <strong>3.4</strong> - <em
         >La disposizione e la presentazione del contenuto sono coerenti o
@@ -221,7 +225,7 @@ import Layout from "../../layouts/Layout.astro";
       diverse presentazioni del layout sono selezionabili dall'utente,
       spiegazioni testuali per avvisare di comportamenti inusuali.)
     </p>
-    <h3>Principio 4: DUREVOLE</h3>
+    <h2>Principio 4: DUREVOLE</h2>
     <p>
       <em
         ><strong
@@ -241,7 +245,7 @@ import Layout from "../../layouts/Layout.astro";
       <li><em><strong>Utilizzare tecnologie accessibili</strong></em></li>
       <li><em><strong>Dichiarare le tecnologie utilizzate</strong></em></li>
     </ul>
-    <h4>Rispettare le specifiche</h4>
+    <h3>Rispettare le specifiche</h3>
     <p>
       <strong>4.1</strong> - <em
         >Utilizzare le tecnologie secondo le proprie specifiche.</em
@@ -250,14 +254,14 @@ import Layout from "../../layouts/Layout.astro";
       Definition), elementi e attributi vengono usati secondo le specifiche, non
       in modo presentazionale.)
     </p>
-    <h4>Utilizzare tecnologie accessibili</h4>
+    <h3>Utilizzare tecnologie accessibili</h3>
     <p>
       <strong>4.2</strong> - <em
         >Le interfacce dei programmi sono accessibili o è prevista una versione
         alternativa accessibile.</em
       >
     </p>
-    <h4>Dichiarare le tecnologie utilizzate</h4>
+    <h3>Dichiarare le tecnologie utilizzate</h3>
     <p>
       <strong>4.3</strong> - <em
         >Le tecnologie utilizzate all'interno dei contenuti sono dichiarate e
@@ -281,7 +285,7 @@ import Layout from "../../layouts/Layout.astro";
       l'insoddisfazione di tale punto potrebbe avere nei confronti
       dell'accessibilità generale della pagina.
     </p>
-    <h4>Priorità 1</h4>
+    <h3>Priorità 1</h3>
     <p>
       Uno sviluppatore di pagine Web <strong>deve</strong> soddisfare questo
       checkpoint. Altrimenti, per una o più categorie di disabilità sarà
@@ -289,7 +293,7 @@ import Layout from "../../layouts/Layout.astro";
       soddisfazione di questo checkpoint è un requisito base per consentire
       l'accesso ad alcune categorie a documenti Web.
     </p>
-    <h4>Priorità 2</h4>
+    <h3>Priorità 2</h3>
     <p>
       Uno sviluppatore di pagine Web <strong>dovrebbe</strong> soddisfare questo
       checkpoint. Altrimenti, per una o più categorie di disabilità sarà
@@ -297,7 +301,7 @@ import Layout from "../../layouts/Layout.astro";
       soddisfazione di questo checkpoint rimuoverebbe importanti barriere per
       l'accesso a documenti Web.
     </p>
-    <h4>Priorità 3</h4>
+    <h3>Priorità 3</h3>
     <p>
       Uno sviluppatore di pagine Web <strong>può</strong> soddisfare questo
       checkpoint. Altrimenti, per una o più categorie di disabilità potrebbero
@@ -316,12 +320,12 @@ import Layout from "../../layouts/Layout.astro";
     </p>
     <figure>
       <a
-        href="http://www.w3.org/WAI/WCAG2A-Conformance" rel="noopener"
+        href="https://www.w3.org/WAI/WCAG2A-Conformance" rel="noopener"
         title="Explanation of WCAG 2.0 Level A Conformance"
       >
         <img
           width="125"
-          src="http://www.w3.org/WAI/wcag2A"
+          src="https://www.w3.org/WAI/wcag2A"
           alt="Level A conformance, W3C WAI Web Content Accessibility Guidelines 2.0"
         />
       </a>
@@ -329,8 +333,8 @@ import Layout from "../../layouts/Layout.astro";
     <Code
       lang="html"
       code={`
-    <a href="http://www.w3.org/WAI/WCAG2A-Conformance" rel="noopener" title="Explanation of WCAG 2.0 Level A Conformance">
-        <img src="http://www.w3.org/WAI/wcag2A"
+    <a href="https://www.w3.org/WAI/WCAG2A-Conformance" rel="noopener" title="Explanation of WCAG 2.0 Level A Conformance">
+        <img src="https://www.w3.org/WAI/wcag2A"
         alt="Level A conformance, W3C WAI Web Content Accessibility Guidelines 2.0">
     </a>
         `}
@@ -341,12 +345,12 @@ import Layout from "../../layouts/Layout.astro";
     </p>
     <figure>
       <a
-        href="http://www.w3.org/WAI/WCAG2AA-Conformance" rel="noopener"
+        href="https://www.w3.org/WAI/WCAG2AA-Conformance" rel="noopener"
         title="Explanation of WCAG 2.0 Level Double-A Conformance"
       >
         <img
           width="125"
-          src="http://www.w3.org/WAI/wcag2AA"
+          src="https://www.w3.org/WAI/wcag2AA"
           alt="Level Double-A conformance, W3C WAI Web Content Accessibility Guidelines 2.0"
         />
       </a>
@@ -355,11 +359,11 @@ import Layout from "../../layouts/Layout.astro";
       lang="html"
       code={`
     <a
-      href="http://www.w3.org/WAI/WCAG2AA-Conformance" rel="noopener"
+      href="https://www.w3.org/WAI/WCAG2AA-Conformance" rel="noopener"
       title="Explanation of WCAG 2.0 Level Double-A Conformance"
     >
       <img
-        src="http://www.w3.org/WAI/wcag2AA"
+        src="https://www.w3.org/WAI/wcag2AA"
         alt="Level Double-A conformance, W3C WAI Web Content Accessibility Guidelines 2.0"
       />
     </a>
@@ -371,12 +375,12 @@ import Layout from "../../layouts/Layout.astro";
     </p>
     <figure>
       <a
-        href="http://www.w3.org/WAI/WCAG2AAA-Conformance" rel="noopener"
+        href="https://www.w3.org/WAI/WCAG2AAA-Conformance" rel="noopener"
         title="Explanation of WCAG 2.0 Level Triple-A Conformance"
       >
         <img
           width="125"
-          src="http://www.w3.org/WAI/wcag2AAA"
+          src="https://www.w3.org/WAI/wcag2AAA"
           alt="Level Triple-A conformance, W3C WAI Web Content Accessibility Guidelines 2.0"
         />
       </a>
@@ -385,18 +389,18 @@ import Layout from "../../layouts/Layout.astro";
       lang="html"
       code={`
     <a
-      href="http://www.w3.org/WAI/WCAG2AAA-Conformance" rel="noopener"
+      href="https://www.w3.org/WAI/WCAG2AAA-Conformance" rel="noopener"
       title="Explanation of WCAG 2.0 Level Triple-A Conformance"
     >
       <img
-        src="http://www.w3.org/WAI/wcag2AAA"
+        src="https://www.w3.org/WAI/wcag2AAA"
         alt="Level Triple-A conformance, W3C WAI Web Content Accessibility Guidelines 2.0"
       />
     </a>
         `}
     />
     <section class="referenze">
-      <h4>Referenze</h4>
+      <h2>Referenze</h2>
       <ol>
         <li id="cite_note_1">
           <a href="#cite_ref_1">^</a> Unicode - sistema di codifica che assegna
@@ -406,8 +410,8 @@ import Layout from "../../layouts/Layout.astro";
         </li>
         <li id="cite_note_2">
           <a href="#cite_ref_2">^</a>
-          <a href="http://www.w3.org/WAI/WCAG2-Conformance.html" rel="noopener"
-            >http://www.w3.org/WAI/WCAG2-Conformance.html</a
+          <a href="https://www.w3.org/WAI/WCAG2-Conformance.html" rel="noopener"
+            >https://www.w3.org/WAI/WCAG2-Conformance.html</a
           > - pagina relativa al confermance level del W3C.
         </li>
       </ol>

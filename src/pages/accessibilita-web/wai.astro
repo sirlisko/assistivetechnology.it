@@ -1,5 +1,6 @@
 ---
 import { Code } from "astro:components";
+import NotaStorica from "../../components/NotaStorica.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -13,6 +14,9 @@ import Layout from "../../layouts/Layout.astro";
       <span class="capitolo">Capitolo 3: Accessibilità Web</span>3.3 Web
       Accessibility Initiative (WAI)
     </h1>
+    <NotaStorica>
+      i dieci consigli riportati risalgono all'epoca delle WCAG 1.0. Per indicazioni attuali si rimanda alle <a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2</a> e alle risorse del <a href="https://www.w3.org/WAI/">WAI</a>.
+    </NotaStorica>
     <p>
       Con <em>Web Accessibility Initiative</em> (<em
         >Iniziativa per il Web Accessibile</em
@@ -31,7 +35,7 @@ import Layout from "../../layouts/Layout.astro";
       creazione di siti web accessibili mediante brevi consigli, il tutto si
       snoda su una lista di dieci punti:
     </p>
-    <h3>1. Immagini ed animazioni</h3>
+    <h2>1. Immagini ed animazioni</h2>
     <p>
       <strong
         ><em>Utilizzare l'attributo</em> alt <em
@@ -64,7 +68,7 @@ import Layout from "../../layouts/Layout.astro";
       In questo esempio sono rappresentati solo gli attributi essenziali, ve ne
       sono altri ma non di rilevante importanza per l'accessibilità.
     </p>
-    <h3>2. Immagini cliccabili</h3>
+    <h2>2. Immagini cliccabili</h2>
     <p>
       <strong
         ><em>Utilizzare l'elemento</em> map <em>e descrivere le zone attive.</em
@@ -78,7 +82,7 @@ import Layout from "../../layouts/Layout.astro";
       cliccabili poste all'interno dell'immagine, per far questo sarà
       sufficiente l'uso dell'attributo <em>alt</em>.
     </p>
-    <h3>3. Multimedia</h3>
+    <h2>3. Multimedia</h2>
     <p>
       <strong
         ><em
@@ -94,7 +98,7 @@ import Layout from "../../layouts/Layout.astro";
       consente la fruibilità di tali contenuti mediante strumenti di Assistive
       Technology quali ad esempio gli <em>screen reader</em>.
     </p>
-    <h3>4. Link ipertestuali</h3>
+    <h2>4. Link ipertestuali</h2>
     <p>
       <strong
         ><em
@@ -108,7 +112,7 @@ import Layout from "../../layouts/Layout.astro";
       possono creare ambiguità non indicando dove porta effettivamente il
       collegamento.
     </p>
-    <h3>5. Organizzazione</h3>
+    <h2>5. Organizzazione</h2>
     <p>
       <strong
         ><em>Utilizzare titoli, liste e una struttura coerente. Utilizzare</em>
@@ -126,7 +130,7 @@ import Layout from "../../layouts/Layout.astro";
     <p>
       Per un analisi più accurata dei CSS si rimanda ai capitoli successivi.
     </p>
-    <h3>6. Figure e diagrammi</h3>
+    <h2>6. Figure e diagrammi</h2>
     <p>
       <strong
         ><em>Descriverli all'interno della pagina o utilizzare l'attributo</em>
@@ -143,7 +147,7 @@ import Layout from "../../layouts/Layout.astro";
     <Code
       lang="html"
       code={`
-        <img src="my_image.gif" alt="la mia immagine" longdesc="img.txt"/>
+    <img src="my_image.gif" alt="la mia immagine" longdesc="img.txt"/>
         `}
     />
     <p>
@@ -153,7 +157,7 @@ import Layout from "../../layouts/Layout.astro";
       sono sufficienti, e delegare all'attributo <em>longdesc</em>
        una descrizione più accurata.
     </p>
-    <h3>7. Script, applet e plug-in</h3>
+    <h2>7. Script, applet e plug-in</h2>
     <p>
       <strong
         ><em
@@ -194,7 +198,7 @@ import Layout from "../../layouts/Layout.astro";
       > verrà mostrato solamente nel qual caso gli <em>script</em> non siano
       supportati oppure siano stati disabilitati dall'utente.
     </p>
-    <h3>8. Cornici (frames)</h3>
+    <h2>8. Cornici (frames)</h2>
     <p><strong><em>Utilizzare noframes e titoli significativi.</em></strong></p>
     <p>
       Il tag <code>noframes</code> ha un funzionamento analogo a <code
@@ -232,13 +236,13 @@ import Layout from "../../layouts/Layout.astro";
       Chiaramente per motivi di accessibilità e portabilità di pagine Web l'uso
       dei frames è altamente consigliato.
     </p>
-    <h3>9. Tabelle</h3>
+    <h2>9. Tabelle</h2>
     <p>
       <strong
         ><em>Facilitare la lettura linea per linea. Riassumere.</em></strong
       >
     </p>
-    <h3>10. Verificare il lavoro</h3>
+    <h2>10. Verificare il lavoro</h2>
     <p>
       <strong
         ><em
@@ -252,11 +256,11 @@ import Layout from "../../layouts/Layout.astro";
       trattati nei prossimi capitoli.
     </p>
     <section class="referenze">
-      <h4>Referenze</h4>
+      <h2>Referenze</h2>
       <ol>
         <li id="cite_note_1">
           <a href="#cite_ref_1">^</a>
-          <a href="http://www.w3.org/Style/CSS/" rel="noopener">http://www.w3.org/Style/CSS/</a
+          <a href="https://www.w3.org/Style/CSS/" rel="noopener">https://www.w3.org/Style/CSS/</a
           > - pagina del W3C riguardante i CSS.
         </li>
       </ol>

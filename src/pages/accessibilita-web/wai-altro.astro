@@ -1,4 +1,5 @@
 ---
+import NotaStorica from "../../components/NotaStorica.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -12,11 +13,14 @@ import Layout from "../../layouts/Layout.astro";
       <span class="capitolo">Capitolo 3: Accessibilità Web</span>3.3.3 Ulteriori
       documentazione rilasciate dal WAI
     </h1>
-    <h3>
+    <NotaStorica>
+      oggi le ATAG sono alla <a href="https://www.w3.org/TR/ATAG20/">versione 2.0</a> (2015), le <a href="https://www.w3.org/TR/UAAG20/">UAAG 2.0</a> sono state pubblicate come nota del W3C e le XAG non sono mai diventate una raccomandazione.
+    </NotaStorica>
+    <h2>
       Authoring Tools Accessibility Guidelines<sup id="cite_ref_1"
         ><a href="#cite_note_1">[1]</a></sup
       > (ATAG)
-    </h3>
+    </h2>
     <p>
       La specifica ATAG (<em
         >Linea guida per l'Accessibilità degli Strumenti per Autori - di
@@ -42,11 +46,11 @@ import Layout from "../../layouts/Layout.astro";
       conseguenza lo strumento che si utilizza per creare tali contenuti deve
       essere ugualmente accessibile.
     </p>
-    <h3>
+    <h2>
       User Agent Accessibility Guidelines<sup id="cite_ref_2"
         ><a href="#cite_note_2">[2]</a></sup
       > (UAAG)
-    </h3>
+    </h2>
     <p>
       La specifica UAAG (<em
         >Linea guida per l'Accessibilità degli User Agent</em
@@ -61,11 +65,11 @@ import Layout from "../../layouts/Layout.astro";
       ed altri programmi che possono aiutare l'utente ad accedere e rendere
       fruibili i contenuti presenti sul Web.
     </p>
-    <h3>
+    <h2>
       XML Accessibility Guidelines<sup id="cite_ref_3"
         ><a href="#cite_note_3">[3]</a></sup
       > (XAG)
-    </h3>
+    </h2>
     <p>
       La specifica XAG (<em>Linea guida per l'Accessibilità del XML</em>) spiega
       come includere "features" in documenti XML promuovendone la loro
@@ -76,21 +80,21 @@ import Layout from "../../layouts/Layout.astro";
       disponibile solo in versione non definitiva.
     </p>
     <section class="referenze">
-      <h4>Referenze</h4>
+      <h2>Referenze</h2>
       <ol>
         <li id="cite_note_1">
           <a href="#cite_ref_1">^</a>
-          <a href="http://www.w3.org/TR/ATAG20/" rel="noopener">http://www.w3.org/TR/ATAG20/</a
+          <a href="https://www.w3.org/TR/ATAG20/" rel="noopener">https://www.w3.org/TR/ATAG20/</a
           > - testo completo della specifica ATAG.
         </li>
         <li id="cite_note_2">
           <a href="#cite_ref_2">^</a>
-          <a href="http://www.w3.org/TR/UAAG20/" rel="noopener">http://www.w3.org/TR/UAAG20/</a
+          <a href="https://www.w3.org/TR/UAAG20/" rel="noopener">https://www.w3.org/TR/UAAG20/</a
           > - testo completo della specifica UAAG.
         </li>
         <li id="cite_note_3">
           <a href="#cite_ref_3">^</a>
-          <a href="http://www.w3.org/TR/xag" rel="noopener">http://www.w3.org/TR/xag</a>
+          <a href="https://www.w3.org/TR/xag" rel="noopener">https://www.w3.org/TR/xag</a>
            - testo completo della specifica XAG.
         </li>
       </ol>
