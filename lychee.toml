@@ -1,0 +1,5 @@
+# Many vendor sites block bots with 403; treat those as reachable.
+accept = ["200..=299", "403", "429"]
+exclude = ["^https://web\\.archive\\.org/"]
+max_retries = 3
+timeout = 30
