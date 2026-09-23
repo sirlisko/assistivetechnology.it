@@ -1,5 +1,34 @@
 # Many vendor sites block bots with 403; treat those as reachable.
 accept = ["200..=299", "403", "429"]
-exclude = ["^https://web\\.archive\\.org/"]
+# Archived links keep the original 2010 URL as their visible text; those originals are dead by design.
+# Only the web.archive.org href is the real link, so skip the text copies.
+exclude = [
+  '^https://web\.archive\.org/',
+  '^http://firefox\.cita\.uiuc\.edu/$',
+  '^http://wiki\.compiz\.org/Plugins/Ezoom$',
+  '^http://www\.ablenetinc\.com/Assistive\-Technology/IntelliTools/IntelliKeys\-USB$',
+  '^http://www\.apple\.com/accessibility/voiceover/$',
+  '^http://www\.apple\.com/osx/$',
+  '^http://www\.cita\.uiuc\.edu/$',
+  '^http://www\.compiz\.org/$',
+  '^http://www\.comune\.venezia\.it/flex/cm/pages/ServeBLOB\.php/L/IT/IDPagina/36040$',
+  '^http://www\.education\.bham\.ac\.uk/research/victar/$',
+  '^http://www\.lifetool\.at/startseite\.html$',
+  '^http://www\.microsoft\.com/enable/training/windowsvista/narrator\.aspx$',
+  '^http://www\.pubbliaccesso\.gov\.it/normative/DM080705\-B\.htm$',
+  '^http://www\.pubbliaccesso\.gov\.it/normative/DM080705\-C\.htm$',
+  '^http://www\.pubbliaccesso\.gov\.it/normative/DM080705\-D\.htm$',
+  '^http://www\.pubbliaccesso\.gov\.it/normative/DM080705\-E\.htm$',
+  '^http://www\.pubbliaccesso\.gov\.it/normative/DM080705\-a\.htm$',
+  '^http://www\.pubbliaccesso\.gov\.it/normative/dm080705\.htm$',
+  '^http://www\.section508\.gov/assistive\-technology\-act\-1998$',
+  '^http://www\.spoken\-web\.com/$',
+  '^http://www\.uicfrosinone\.it/$',
+  '^http://www\.w3schools\.com/Ajax/Default\.Asp$',
+  '^http://www\.wat\-c\.org/$',
+  '^http://www\.xkeys\.com/xkeys/xkdesk\.php$',
+  '^http://www\.xkeys\.com/xkeys/xkstick\.php$',
+  '^https://addons\.mozilla\.org/it/firefox/addon/accessibility\-evaluation\-toolb/$',
+]
 max_retries = 3
 timeout = 30
