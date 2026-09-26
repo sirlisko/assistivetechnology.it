@@ -1,5 +1,6 @@
 ---
 interface Props {
+	label: string;
 	prev?: {
 		href: string;
 		title: string;
@@ -10,10 +11,10 @@ interface Props {
 	};
 }
 
-const { prev, next } = Astro.props;
+const { prev, next, label } = Astro.props;
 ---
 
-<nav role="navigation" aria-label="Navigazione capitoli">
+<nav aria-label={label}>
   <ul>
     <li class="prev">
       {
